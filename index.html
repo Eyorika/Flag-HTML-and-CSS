@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="wrapper">
+        <div class="stick"></div>
+        <div class="flag">
+          <div class="top"></div>
+          <div class="middle"></div>
+          <div class="bottom"></div>
+        </div>
+      </div>
+      
+      <style>
+        .wrapper {
+          display: flex;
+        }
+      
+        .stick {
+          height: 800px;
+          width: 10px;
+          background-color: rgb(56, 56, 55);
+          border-top-left-radius: 12px;
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+         position: absolute;
+         animation: poll 2s infinite alternate ease-in-out;
+
+
+        }
+      
+        .flag {
+
+          width: 400px;
+          height: 190px;
+          background-color: transparent;
+          position: relative;
+          box-shadow: 0px 0px 90px 1px #5e3a3a;
+          transform-style: preserve-3d;
+
+          transform-origin: center bottom;
+         animation: windTop 2s infinite alternate ease-in-out;
+
+        }
+      
+        .top {
+          height: 63.3px;
+          background-color: green;
+        }
+      
+        .middle {
+          height: 63.3px;
+          background-color: yellow;
+        }
+      
+        .bottom {
+          height: 63.3px;
+          background-color: red;
+          animation: windBottom 2s infinite alternate ease-in-out;
+
+          
+        }
+      
+      
+        @keyframes windTop {
+    30% {
+        border-top-right-radius: -100px;
+      transform: rotateX(0deg) rotateY(5deg);
+    }
+
+    100%{
+    border-top-right-radius: 200px;
+    border-right: 30px solid transparent;
+    background: linear-gradient(green,yellow,red) ;
+      transform: rotateX(10.5deg) rotateY(20deg) rotateZ(2.5deg);
+    }
+  }
+
+  @keyframes windMiddle {
+    25% {
+
+    border-top-right-radius: 100px;
+    border-right: -20px solid transparent;
+    border-right-width: -30px;
+
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      transform: rotateX(-5deg) rotateY(5deg);
+    }
+  }
+
+  @keyframes windBottom {
+    30% {
+      transform: rotateY(-5deg);
+    }
+    100% {   
+        border-top-right-radius: -100px;
+        transform: rotateX(10deg) rotateY(-5deg) rotateZ(-5deg);
+    }
+
+    
+  }
+  @keyframes poll{
+    100%{
+        transform: rotateX(-2deg) rotateY(+10deg) rotateZ(2.5deg);
+        background: radial-gradient(black,red,orange,yellow,green,blue,indigo,violet);
+    }
+  }
+      </style>
+      
+
+</body>
+</html>
+
+
